@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ebook Gratuito: Por que seu site não vende</title>
+    <title>Ebook Gratuito: A Fórmula Oculta</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -11,12 +11,14 @@
           extend: {
             colors: {
               brand: {
-                black: '#050505',
-                dark: '#121212',
-                cream: '#F2F2EC',
-                mint: '#A0C4B8',
-                mintLight: '#C4E0D6',
-                mintDark: '#7A998E'
+                bg: '#050a07', // Deepest Jungle Green/Black (No Blue)
+                surface: '#0d1612', // Slightly lighter dark green
+                primary: '#10B981', // Emerald 500
+                secondary: '#065F46', // Emerald 800
+                accent: '#34D399', // Emerald 400
+                text: '#ECFDF5', // Mint White
+                muted: '#9CA3AF', // Neutral Gray (No Blue)
+                cream: '#F2F2EC', // Logo Cream
               }
             },
             fontFamily: {
@@ -26,6 +28,13 @@
             animation: {
               'float': 'float 6s ease-in-out infinite',
               'glow': 'glow 3s ease-in-out infinite',
+              'shimmer': 'shimmer 2s linear infinite',
+            },
+            backgroundImage: {
+              // Removed blue-ish #020617, replaced with #050a07
+              'hero-glow': 'conic-gradient(from 90deg at 50% 50%, #00000000 50%, #050a07 100%), radial-gradient(rgba(16, 185, 129, 0.08) 0%, transparent 50%)',
+              'gradient-primary': 'linear-gradient(135deg, #10B981 0%, #047857 100%)',
+              'gradient-dark': 'linear-gradient(135deg, #064E3B 0%, #022C22 100%)',
             },
             keyframes: {
               float: {
@@ -35,31 +44,44 @@
               glow: {
                 '0%, 100%': { opacity: 0.5, transform: 'scale(1)' },
                 '50%': { opacity: 1, transform: 'scale(1.05)' },
+              },
+              shimmer: {
+                '0%': { transform: 'translateX(-100%)' },
+                '100%': { transform: 'translateX(100%)' },
               }
             }
           }
         }
       }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
       body {
-        background-color: #050505;
-        color: #F2F2EC;
+        background-color: #050a07;
+        color: #ECFDF5;
+        font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+        -webkit-font-smoothing: antialiased;
       }
       /* Custom Scrollbar */
       ::-webkit-scrollbar {
-        width: 10px;
+        width: 8px;
       }
       ::-webkit-scrollbar-track {
-        background: #121212;
+        background: #050a07;
       }
       ::-webkit-scrollbar-thumb {
-        background: #A0C4B8;
-        border-radius: 5px;
+        background: #065F46;
+        border-radius: 4px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #C4E0D6;
+        background: #10B981;
+      }
+      
+      .glass-card {
+        background: rgba(6, 78, 59, 0.15); /* More subtle green tint */
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(16, 185, 129, 0.1);
       }
     </style>
   <script type="importmap">
